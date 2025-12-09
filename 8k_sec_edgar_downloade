@@ -5,8 +5,8 @@ from sec_edgar_downloader import Downloader
 def main():
     # IMPORTANT:
     # Replace with something real so you comply with SEC fair-access policy
-    company_name = "HashFunction Research"      # e.g. your org / project name
-    email = "andrewlangalis@gmail.com"
+    company_name = "Company Name"      # e.g. your org / project name
+    email = "email@email.com"
 
     # This will create the folder relative to where you run the script
     download_folder = "see_8k_filings_sec"
