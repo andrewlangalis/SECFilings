@@ -1,0 +1,33 @@
+# download_see_8k_sec_edgar_downloader.py
+
+from sec_edgar_downloader import Downloader
+
+def main():
+    # IMPORTANT:
+    # Replace with something real so you comply with SEC fair-access policy
+    company_name = "HashFunction Research"      # e.g. your org / project name
+    email = "andrewlangalis@gmail.com"
+
+    # This will create the folder relative to where you run the script
+    download_folder = "see_8k_filings_sec"
+
+    # Initialize downloader – this sets the proper User-Agent for the SEC
+    dl = Downloader(company_name, email, download_folder)
+
+    # --- Download all 8-Ks for Sealed Air (ticker: SEE) ---
+
+    # All 8-Ks (no amends):
+    # dl.get("8-K", "SEE")
+
+    # All 8-Ks INCLUDING 8-K/A amends (usually what you want):
+    dl.get("8-K", "SEE", include_amends=True)
+
+    # If you ever want to limit by date or count:
+    # dl.get("8-K", "SEE", after="2010-01-01", before="2025-12-31")
+    # dl.get("8-K", "SEE", limit=50)
+
+    print("Done. Files should be in:", download_folder)
+
+
+if __name__ == "__main__":
+    main()
